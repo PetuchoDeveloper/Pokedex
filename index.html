@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>POKEDEX!</h1>
+    </header>
+
+    <div id="pokesearcher">
+        <input id="pokeinput" type="text" placeholder="Enter pokemon ID or Name">
+        <button onclick="pokeFetch()" id="pokebtn">Show Me The Pokemon!</button>
+    </div>
+
+    <main id="pokedex">
+        <img src="./img/mobiledex.png" alt="" id="mobiledex">
+        <img src="./img/pokedex-left.png" alt="" id="pokedex-left-img" class="pokedex-img">
+        <div id="pokedex-left" class="pokedex-div">
+            <div id="pokescreen">
+                <img src="./img/pokeball_PNG29.webp" alt="i don't found the img, but i think it's a pokemon :3" id="pokeimg">
+                <div id="pokemonIdAndName"></div>
+            </div>
+            <div id="pokemoves">
+                <h4>Movements</h4>
+            </div>
+            <button class="movebtn" id="nextmove" onclick="nextMoveBtn()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill moveicon" viewBox="0 0 16 16">
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                </svg>
+            </button>
+            <button class="movebtn" id="prevmove" onclick="prevMoveBtn()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                </svg>
+            </button>
+        </div>
+
+        <img src="./img/pokedex-right.png" alt="" id="pokedex-right-img" class="pokedex-img">
+        <div id="pokedex-right" class="pokedex-div">
+                <div id="pokestats">
+                    <div id="statbars">
+                        <div class="stat-bar" id="hp-bar"></div>
+                        <div class="stat-bar" id="attack-bar"></div>
+                        <div class="stat-bar" id="defense-bar"></div>
+                        <div class="stat-bar" id="special-attack-bar"></div>
+                        <div class="stat-bar" id="special-defense-bar"></div>
+                        <div class="stat-bar" id="speed-bar"></div>
+                    </div>
+                </div>
+                <div id="stattitles">
+                    <p class="stattitle">HP</p>
+                    <p class="stattitle">ATK</p>
+                    <p class="stattitle">DFN</p>
+                    <p class="stattitle">SDFN</p>
+                    <p class="stattitle">SATK</p>
+                    <p class="stattitle">SPD</p>
+                </div>
+                <div id="poketypes">
+                    <h3 id="poketypes-title">TYPE</h3>
+                </div>
+                <div id="pokeheight" class="pokesize">HEIGHT:</div>
+                <div id="pokeweight" class="pokesize">WEIGHT:</div>
+            <!--</div>-->
+        </div>
+    </main>
+</body>
+</html>

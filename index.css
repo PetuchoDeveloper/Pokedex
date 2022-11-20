@@ -1,0 +1,313 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+@font-face {
+    font-family: 'Retro Gaming'; /*a name to be used later*/
+    src: url('./fonts/retro_gaming/Retro\ Gaming.ttf'); /*URL to font*/
+}
+button{
+    all: unset;
+    cursor: pointer;
+}
+#mobiledex{
+    width: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
+}
+header{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(90deg, #bd0000, #ff2525);
+}
+header h1{
+    color: white;
+    font-size: 48px;
+}
+#pokesearcher{
+    height: 5vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pokeinput{
+    height: 4vh;
+    width: 25vw;
+    border: 1px solid black;
+}
+#pokebtn{
+    height: 4vh;
+    width: 25vw;
+    background-color: rgb(118, 248, 248);
+    border: 1px solid black;
+    border-radius: 0 10px 10px 0;
+}
+#pokedex{
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+.pokedex-div{
+    height: 100%;
+    width: 40%;
+}
+.pokedex-img{
+    position: absolute;
+    width: 45vw;
+    height: 85vh;
+}
+#pokedex-right-img{
+    margin-left: 50vw;
+    z-index: -1;
+}
+#pokedex-left-img{
+    margin-left: 5vw;
+    z-index: -1;
+}
+/* dont question the percentajes, it's for acommodating data :c */
+#pokedex-left{
+    display: grid;
+    margin-left: 5vw;
+    grid-template-columns: 20% 5% 34% 5% 22% 14%;
+    grid-template-rows: 30% 30% 22.5% 10% 7.5%;
+}
+#pokedex-right{
+    display: grid;
+    width: 37.5vw;
+    margin-left: 5vw;
+    grid-template-columns: 12% 31% 9% 31% 17%;
+    grid-template-rows: 30% 6% 12% 4% 33% 6% 9%;
+}
+#pokescreen{
+    grid-column: 2/6;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+#pokemoves{
+    grid-column: 3/4;
+    grid-row: 4/5;
+    color: #004d00;
+}
+#pokemoves h4{
+    font-family: 'Retro Gaming';
+}
+.movebtn{
+    width: 100%;
+    height: 100%;
+    background-color: #004d00;
+}
+#nextmove{
+    border-radius: 0 15px 15px 0;
+    grid-column: 4/5;
+    grid-row: 4/5;
+}
+#prevmove{
+    border-radius: 15px 0 0 15px;
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+#pokeimg{
+    width: 60%;
+    height: 80%;
+}
+#pokemonIdAndName{
+    width: 80%;
+    height: 20%;
+    font-family: 'Retro Gaming';
+}
+#poketypes{
+    grid-row: 2/3;
+    grid-column: 2/5;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: yellow;
+}
+#poketypes-title{
+    margin-left: 10%;
+    font-family: 'Retro Gaming';
+    font-size: 10px;
+}
+#poketypes p{
+    font-family: 'Retro Gaming';
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 70%;
+    width: 25%;
+    margin-left: 5%;
+    color: white;
+    border-radius: 10px;
+}
+#pokestats{
+    grid-column: 2/5;
+    grid-row: 3/4;
+}
+#statbars{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+#stattitles{
+    grid-column: 2/5;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    color: yellow;
+}
+.stattitle{
+    font-family: 'Retro Gaming';
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stat-bar{
+    display: flex;
+    flex-flow: column-reverse;
+}
+.pokesize{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: yellow;
+    text-align: left;
+    margin: 0 0 0 10%;
+}
+#pokeheight{
+    grid-row: 6/7;
+    grid-column: 2/3;   
+}
+#pokeweight{
+    grid-row: 6/7;
+    grid-column: 4/5;
+}
+.stat-slice {
+    background-color: aquamarine;
+    border-radius: 5px;
+    width: 100%;
+}
+
+@media (max-width: 768px) and (min-width: 0px){
+    .pokedex-img{
+        visibility: hidden;
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    #mobiledex{
+        visibility: visible;
+        display: block;
+        height: 85vh;
+        width: 100vw;
+        position: absolute;
+        z-index: -1;
+    }
+    .pokedex-div{
+        height: 0;
+        width: 0;
+    }
+    #pokeinput, #pokebtn{
+        width: 50vw;
+        font-size: 10px;
+    }
+    #pokedex-left{
+        margin: 0;
+        height: 85vh;
+        width: 50vw;
+        grid-template-columns: 10% 80% 10%;
+        grid-template-rows: 21% 28% 7.5% 15% 7.5% 21%;
+    }
+    #prevmove{
+        margin-left: 25%;
+        width: 75%;
+        text-align: center;
+        color: aqua;
+        background-color: #009696;
+        grid-column: 1/2;
+    }
+    #pokemoves{
+        color: #009696;
+        grid-column: 2/3;
+    }
+    #nextmove{
+        margin-right: 25%;
+        width: 75%;
+        text-align: center;
+        color: aqua;
+        background-color: #009696;
+        grid-column: 3/4;
+    }
+    #pokescreen{
+        grid-row: 2/3;
+        grid-column: 1/3;
+    }
+    #pokedex-right{
+        display: grid;
+        margin: 0;
+        height: 85vh;
+        width: 50vw;
+        grid-template-columns: 20% 70% 10%;
+        grid-template-rows: 21% 10% 18% 7.5% 15% 3% 4% 21%;
+    }
+    #poketypes{
+        grid-column: 1/3;
+    }
+    #poketypes-title{
+        color: #009696;
+        font-size: 12px;
+    }
+    #stattitles{
+        display: flex;
+        flex-flow: column;
+        grid-row: 3/6;
+        grid-column: 1/2;
+        justify-content: space-around;
+        color: #009696;
+    }
+    #pokestats{
+        display: flex;
+        flex-flow: column;
+        grid-row: 3/6;
+        grid-column: 2/3;
+        justify-content: space-around;
+    }
+    #statbars{
+        flex-flow: column;
+    }
+    .stat-bar{
+        flex-flow: row;
+    }
+    .stat-slice{
+        height: 15vh;
+    }
+    #pokeheight{
+        flex-flow: row;
+        grid-column: 1/3;
+        grid-row: 6/7;
+        color: #005858;
+    }
+    #pokeweight{
+        flex-flow: row;
+        grid-column: 1/3;
+        grid-row: 7/8;
+        color: #005858;
+    }
+}
